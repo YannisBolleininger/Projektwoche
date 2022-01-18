@@ -53,9 +53,10 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Levels\Assets\Spawn\Spawner.cs" />
-    <Compile Include="Assets\Enemys\Test_Enemy\Move.cs" />
-    <Compile Include="Assets\Defense\Tower\Tower01.cs" />
+    <Compile Include="Assets\Enemys\Enemy01\Move.cs" />
+    <Compile Include="Assets\Defense\Tower01\Tower01.cs" />
+    <Compile Include="Assets\Enemys\Enemy01\Enemy.cs" />
+    <Compile Include="Assets\Defense\Projectile\Projectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
