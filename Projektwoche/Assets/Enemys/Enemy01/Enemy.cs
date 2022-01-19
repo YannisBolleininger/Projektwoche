@@ -18,4 +18,12 @@ public class Enemy : MonoBehaviour
     {
         
     }
+    public void Hit(float damage)
+    {
+        Health = Health - damage;
+        if(Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

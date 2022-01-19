@@ -6,15 +6,19 @@ public class Tower : MonoBehaviour
 {
     GameObject enemy;
     public GameObject target;
+    public GameObject rangeIndex;
 
     public GameObject projectile;
 
 
     public int range;
-    public float cooldown = 10;
+    public float cooldown;
+
+    bool shooting;
+
     void Start()
     {
-        
+        shooting = false;
     }
 
     void Update()
@@ -24,11 +28,12 @@ public class Tower : MonoBehaviour
             PlaceTarget();
             if(CheckRange())
             {
-                StartCoroutine(Shoot());
+                if (shooting == false)
+                {
+                    StartCoroutine(Shoot());
+                }
             }
-            StopCoroutine(Shoot());
         }
-        else StopCoroutine(Shoot());
 
     }
 
@@ -40,14 +45,21 @@ public class Tower : MonoBehaviour
             enemy = l_enemy;
             return true;
         }
-        else return false;
+        else {
+            shooting = false;
+            return false;
+        }
     }
 
     bool CheckRange() //checks if enemy is in range
     {
         if (Vector3.Distance(this.transform.position, enemy.transform.position) < range)
             return true;
-        else return false;
+        else
+        {
+            shooting = false;
+            return false;
+        }
     }
 
     void PlaceTarget() //places target to enemy position
@@ -58,12 +70,15 @@ public class Tower : MonoBehaviour
     IEnumerator Shoot() // shoots every *cooldown* seconds
     {
         float health = enemy.GetComponent<Enemy>().Health;
-        while(health > 0)
-        {
+        shooting = true;
+
+        while(health > 0) {
             yield return new WaitForSeconds(cooldown);
-            GameObject shot = Instantiate(projectile) as GameObject;
-            projectile.GetComponent<Projectile>().targetPos = enemy.transform.position;
+            health = health-1;
+            //projectile.GetComponent<Projectile>().targetPos = enemy.transform.position;
+            projectile.GetComponent<Projectile>().enemy = enemy;
             projectile.GetComponent<Projectile>().towerPos = this.transform.position;
+            GameObject shot = Instantiate(projectile) as GameObject;
         }
     }
 

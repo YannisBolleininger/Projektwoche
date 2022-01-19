@@ -4,39 +4,37 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public Transform start;
-    public Transform end;
-    public Transform[] waypoints;
+    Transform[] waypoints;
+
+
     public float movementSpeed;
+    public float turnSpeed;
 
     private int nextWaypoint;
     private int quantityWaypoint;
 
 
     void Start()
-    { 
-        int waypointsQuantity = waypoints.Length;
-         //set start Postion to start waypoint
-        //transform.position = start.transform.position;
+    {
+        waypoints = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>().waypoints;
     }
 
 
     void Update()
     {
-
-        if (this.transform.position != end.transform.position)
+        if (nextWaypoint != waypoints.Length)
         {
             this.transform.position = Vector3.MoveTowards(transform.position, waypoints[nextWaypoint].transform.position, movementSpeed * Time.deltaTime); //moves towards next waypoint
 
-            if (transform.position == waypoints[nextWaypoint].transform.position)
+            if (transform.position == waypoints[nextWaypoint].transform.position && nextWaypoint != (waypoints.Length-1))
             {
                 nextWaypoint++;
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.forward, waypoints[nextWaypoint].position - transform.position), 10 * Time.time); //rotates towards next waypoint
+
+                //rotation to next waypoint
+                Quaternion rotate = Quaternion.LookRotation(waypoints[nextWaypoint].transform.position - this.transform.position);
+                this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotate, turnSpeed * Time.deltaTime);
+
             }
-        }
-        else
-        {
-               
         }
     }
 }

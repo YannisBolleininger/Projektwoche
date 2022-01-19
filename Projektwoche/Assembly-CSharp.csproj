@@ -54,10 +54,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Enemys\Enemy01\Enemy.cs" />
+    <Compile Include="Assets\Defense\Tower01\RangeIndex.cs" />
     <Compile Include="Assets\Enemys\Enemy01\Move.cs" />
     <Compile Include="Assets\Defense\Projectile\Projectile.cs" />
-    <Compile Include="Assets\Defense\Tower01\RangeIndex.cs" />
     <Compile Include="Assets\Defense\Tower01\Tower.cs" />
+    <Compile Include="Assets\Levels\Spawn\Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

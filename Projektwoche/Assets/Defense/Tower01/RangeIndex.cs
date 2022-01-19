@@ -18,6 +18,10 @@ public class RangeIndex : MonoBehaviour
         line.useWorldSpace = false;
         Draw();
     }
+    void Update()
+    {
+    }
+
     void Draw()
     {
         float angle = 20f;

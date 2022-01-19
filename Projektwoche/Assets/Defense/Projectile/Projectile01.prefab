@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184122213754590318}
-  m_LocalRotation: {x: -0.6532815, y: -0.27059805, z: 0.27059805, w: 0.65328145}
-  m_LocalPosition: {x: 31.620506, y: 5.2802544, z: -20.7495}
-  m_LocalScale: {x: 6, y: 24, z: 6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.8905, z: 0}
+  m_LocalScale: {x: 60.518337, y: 242.07335, z: 60.518337}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dded0aefaff412d468f806fb42dd8b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPos: {x: 12.510028, y: 1.29, z: 34.17}
-  towerPos: {x: 37.47, y: 0.06, z: -11.63}
+  targetPos: {x: -0.46728206, y: 1.29, z: -11.63}
+  towerPos: {x: 39.12, y: 0.06, z: 2.7}
   projectileSpeed: 100
+  enemy: {fileID: 0}
+  damage: 10

@@ -560,7 +560,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2456176177098834268}
-  range: 0
+  rangeIndex: {fileID: 0}
+  projectile: {fileID: 0}
+  range: 50
+  cooldown: 1
 --- !u!1 &4237348386889283636
 GameObject:
   m_ObjectHideFlags: 0
