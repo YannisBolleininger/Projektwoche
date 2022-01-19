@@ -16,9 +16,8 @@ public class Move : MonoBehaviour
     void Start()
     { 
         int waypointsQuantity = waypoints.Length;
-
          //set start Postion to start waypoint
-        transform.position = start.transform.position;
+        //transform.position = start.transform.position;
     }
 
 

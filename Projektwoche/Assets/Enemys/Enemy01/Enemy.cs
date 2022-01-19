@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public double Health;
+    public float Health;
 
     void Start()
     {
