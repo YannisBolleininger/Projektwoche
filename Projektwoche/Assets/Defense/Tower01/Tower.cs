@@ -54,7 +54,10 @@ public class Tower : MonoBehaviour
     bool CheckRange() //checks if enemy is in range
     {
         if (Vector3.Distance(this.transform.position, enemy.transform.position) < range)
-            return true;
+        {
+            Debug.Log($"range: {Vector3.Distance(this.transform.position, enemy.transform.position)}");
+            return true;            
+        }
         else
         {
             shooting = false;

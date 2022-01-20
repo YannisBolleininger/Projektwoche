@@ -7,12 +7,12 @@ public class RangeIndex : MonoBehaviour
     public LineRenderer line;
     public int segments;
     float radius;
+    public GameObject tower;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject tower = GameObject.Find("Tower01");
-        radius = tower.GetComponent<Tower>().range;
+        radius = tower.GetComponent<Tower>().range * 2;
 
         line.positionCount = segments+1;
         line.useWorldSpace = false;
