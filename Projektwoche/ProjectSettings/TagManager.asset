@@ -8,6 +8,7 @@ TagManager:
   - Target
   - Spawner
   - Base
+  - Tower01
   layers:
   - Default
   - TransparentFX

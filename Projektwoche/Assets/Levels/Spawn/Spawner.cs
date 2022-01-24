@@ -17,7 +17,6 @@ public class Spawner : MonoBehaviour
 
     public GameObject vehicle; 
 
-    bool enemysSpawned = false;
 
     void Start()
     {
@@ -39,7 +38,6 @@ public class Spawner : MonoBehaviour
             enemy.transform.position = this.transform.position;
             enemy = Instantiate(enemy);
         }
-        enemysSpawned=true;
 
     }
 }

@@ -83,4 +83,13 @@ public class Tower : MonoBehaviour
         }
     }
 
+    public override string ToString()
+    {
+        return $"Range: {range}\n" +
+            $"Cooldown: {cooldown} seconds\n" +
+            $"Damage: {projectile.GetComponent<Projectile>().damage}";
+    }
+
+
+
 }

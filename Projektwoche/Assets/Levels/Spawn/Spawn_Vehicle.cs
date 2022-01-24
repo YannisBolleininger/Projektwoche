@@ -12,6 +12,7 @@ public class Spawn_Vehicle : MonoBehaviour
 
     public Transform start;
 
+
     private void Start()
     {
         this.transform.position = start.transform.position;
@@ -21,11 +22,12 @@ public class Spawn_Vehicle : MonoBehaviour
     {
         if (move)
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, spawner.transform.position, speed * Time.deltaTime);
-            if (this.transform.position == spawner.transform.position)
-            {
-                spawner.GetComponent<Spawner>().VehicleOnPos();
-            }
+                this.transform.position = Vector3.MoveTowards(this.transform.position, spawner.transform.position, speed * Time.deltaTime);
+                if (this.transform.position == spawner.transform.position)
+                {
+                    spawner.GetComponent<Spawner>().VehicleOnPos();
+               }
+            
         }
     }
 

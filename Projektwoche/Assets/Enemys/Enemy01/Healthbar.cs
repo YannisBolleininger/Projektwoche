@@ -6,16 +6,16 @@ public class Healthbar : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    Transform camera;
+    Transform cam;
     void Start()
     {
-        camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
     }
 
     // Update is called once per frame
     private void LateUpdate()
     {
-        transform.LookAt(transform.position + camera.forward);
+        transform.LookAt(transform.position + cam.forward);
     }
 
 }
