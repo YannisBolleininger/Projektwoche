@@ -9,7 +9,6 @@ public class Move : MonoBehaviour
     public float turnSpeed;
 
     private int nextWaypoint;
-    private int quantityWaypoint;
 
 
     void Start()

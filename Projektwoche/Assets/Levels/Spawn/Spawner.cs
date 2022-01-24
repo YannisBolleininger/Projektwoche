@@ -11,24 +11,23 @@ public class Spawner : MonoBehaviour
 
     public float waitingTime;
 
-    bool enemysSpawned = false;
-
     public GameObject[] enemys; //stores all enemys in spawn order
 
     public Transform[] waypoints;
 
+    public GameObject vehicle; 
+
+    bool enemysSpawned = false;
+
     void Start()
     {
-        this.transform.position = start.transform.position;
-        StartCoroutine(Spawn());
+         vehicle.GetComponent<Spawn_Vehicle>().Move(true);
     }
 
-    void Update()
+    public void VehicleOnPos()
     {
-        if(enemysSpawned && GameObject.FindGameObjectWithTag("Enemy") == null)
-        {
-
-        }
+        vehicle.GetComponent<Spawn_Vehicle>().Move(false);
+        StartCoroutine(Spawn());
     }
 
     IEnumerator Spawn()
@@ -37,6 +36,7 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(waitingTime);
             GameObject enemy = enemys[i];
+            enemy.transform.position = this.transform.position;
             enemy = Instantiate(enemy);
         }
         enemysSpawned=true;

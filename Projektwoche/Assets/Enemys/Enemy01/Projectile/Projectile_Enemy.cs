@@ -21,7 +21,7 @@ public class Projectile_Enemy : MonoBehaviour
             this.transform.LookAt(targetPos);
             this.transform.Rotate(+90, 0, 0);
 
-        if (this.transform.position == spawnPos)
+        if (this.transform.position == targetPos)
         {
             Destroy(gameObject);
         }
