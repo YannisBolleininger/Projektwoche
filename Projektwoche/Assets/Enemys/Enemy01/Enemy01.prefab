@@ -1354,39 +1354,13 @@ MonoBehaviour:
   Health: 100
   MaxHealth: 100
   healthbar: {fileID: 172631364861116045}
-  healthColor:
-    serializedVersion: 2
-    key0: {r: 1, g: 0.13847125, b: 0, a: 1}
-    key1: {r: 1, g: 0.97292817, b: 0, a: 1}
-    key2: {r: 0.119650245, g: 1, b: 0, a: 0}
-    key3: {r: 1, g: 0, b: 0.027940273, a: 0}
-    key4: {r: 1, g: 0, b: 0.027940273, a: 0}
-    key5: {r: 1, g: 0, b: 0.027940273, a: 0}
-    key6: {r: 1, g: 0, b: 0.027940273, a: 0}
-    key7: {r: 1, g: 0, b: 0.027940273, a: 0}
-    ctime0: 0
-    ctime1: 33346
-    ctime2: 65535
-    ctime3: 29684
-    ctime4: 38357
-    ctime5: 42212
-    ctime6: 42983
-    ctime7: 65535
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
   healthIndex: {fileID: 684770688695430239}
   high: {r: 0, g: 1, b: 0.44769168, a: 0.78431374}
   mid: {r: 0.87333184, g: 0.9150943, b: 0.18560876, a: 0.78431374}
   low: {r: 0.7830189, g: 0, b: 0.14248194, a: 0.5882353}
+  cooldown: 1
+  damage: 50
+  projectile: {fileID: 8122898927449517622, guid: 9c9f4137c535b294bad875970c9cfc0d, type: 3}
 --- !u!1 &5298040677751384932
 GameObject:
   m_ObjectHideFlags: 0

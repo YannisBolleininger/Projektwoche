@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Target
   - Spawner
+  - Base
   layers:
   - Default
   - TransparentFX

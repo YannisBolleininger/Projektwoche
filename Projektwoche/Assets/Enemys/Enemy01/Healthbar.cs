@@ -6,7 +6,7 @@ public class Healthbar : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Transform camera;
+    Transform camera;
     void Start()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera").transform;

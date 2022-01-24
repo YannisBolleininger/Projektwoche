@@ -27,9 +27,13 @@ public class Move : MonoBehaviour
             if (transform.position == waypoints[nextWaypoint].transform.position && nextWaypoint != (waypoints.Length - 1))
              {
                  nextWaypoint++;
-             }
+            }
             Quaternion rotate = Quaternion.LookRotation(waypoints[nextWaypoint].transform.position - this.transform.position);
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotate, turnSpeed * Time.deltaTime);
+        }
+        if(this.transform.position == waypoints[waypoints.Length - 1].transform.position)
+        {
+            this.GetComponent<Enemy>().HitBase();
         }
     }
 }

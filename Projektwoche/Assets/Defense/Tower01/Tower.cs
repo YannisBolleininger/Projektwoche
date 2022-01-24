@@ -55,7 +55,6 @@ public class Tower : MonoBehaviour
     {
         if (Vector3.Distance(this.transform.position, enemy.transform.position) < range)
         {
-            Debug.Log($"range: {Vector3.Distance(this.transform.position, enemy.transform.position)}");
             return true;            
         }
         else
@@ -78,7 +77,6 @@ public class Tower : MonoBehaviour
         while(health > 0) {
             yield return new WaitForSeconds(cooldown);
             health = health-1;
-            //projectile.GetComponent<Projectile>().targetPos = enemy.transform.position;
             projectile.GetComponent<Projectile>().enemy = enemy;
             projectile.GetComponent<Projectile>().towerPos = this.transform.position;
             GameObject shot = Instantiate(projectile) as GameObject;
