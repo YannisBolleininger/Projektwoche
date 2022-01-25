@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
 
     public float waitingTime;
 
-    public GameObject[] enemys; //stores all enemys in spawn order
+    public GameObject[] allEnemys;
 
     public Transform[] waypoints;
 
@@ -28,12 +28,12 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
+        //DiffHandler();
         for (int i = 0; i < amout; i++)
         {
             yield return new WaitForSeconds(waitingTime);
-            GameObject enemy = enemys[i];
+            GameObject enemy = GetEnemy();
             enemy.transform.position = this.transform.position;
-            DiffHandler();
             enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
             enemy = Instantiate(enemy);
         }
@@ -42,6 +42,8 @@ public class Spawner : MonoBehaviour
 
     void DiffHandler()
     {
+
+        //Helath of Enemy
         if (round > 5)
         {
             difficulty = 2;
@@ -61,6 +63,7 @@ public class Spawner : MonoBehaviour
         }
         else { hpMultiply = difficulty; }
         
+        //amount of Enemys
         if(round < 10)
         {
             amout = 8;
@@ -81,5 +84,63 @@ public class Spawner : MonoBehaviour
         {
             amout++;
         }
+
+        //Type of Enemy
+        
+    }
+
+    GameObject GetEnemy()
+    {
+        int lengt = amout;
+        if (amout < allEnemys.Length)
+        {
+            lengt = allEnemys.Length;
+        }
+        if (round < lengt ^ round < 5)
+        {
+            int i = 0;
+            for (i = 0;  i < amout / lengt; i++)
+            {
+                // enemy = allEnemys[1];
+                Debug.Log("Enemy1");
+
+            }
+            for (i = amout / lengt; i < amout / (lengt / 2); i++)
+            {
+                //enemy = allEnemys[2];
+                Debug.Log("Enemy2");
+            }
+            if(round > 5)
+            {
+
+            }
+        }
+        else
+        {
+            int i = 0;
+            for (i = 0; i < amout / lengt; i++)
+            {
+                // enemy = allEnemys[1];
+                Debug.Log("Enemy1");
+
+            }
+            for (i = amout / lengt; i < amout / (lengt / 2); i++)
+            {
+                //enemy = allEnemys[2];
+                Debug.Log("Enemy2");
+            }
+            for (i = amout / (lengt / 2); i < (amout / lengt) + (amout / (lengt / 2)); i++)
+            {
+                //enemy = allEnemys[3];
+                Debug.Log("Enemy3");
+            }
+            for (i = (amout / lengt) + (amout / (lengt / 2)); i < amout; i++)
+            {
+                //enemy = allEnemys[4];
+                Debug.Log("Enemy4");
+            }
+
+        }
+        return null;
     }
 }

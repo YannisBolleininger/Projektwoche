@@ -12,7 +12,7 @@ public class GameHandler : MonoBehaviour
     public GameObject spawner;
 
     public GameObject ui;
-    GameObject uiNotify;
+    string uiNotify;
 
     int spawener_diff;
     int spawner_round;
@@ -27,7 +27,7 @@ public class GameHandler : MonoBehaviour
 
 
         //UI controls:
-        uiNotify = GameObject.Find("Notification");
+        uiNotify = GameObject.Find("Notification").GetComponent<Text>().text;
     }
 
     // Update is called once per frame
@@ -35,9 +35,7 @@ public class GameHandler : MonoBehaviour
     {
         if (playButton.GetComponent<Play>().GetState())
         {
-            spawnVehicle.GetComponent<Spawn_Vehicle>().Move(true);
-            Debug.Log("Game Started!!");
-            playButton.GetComponent<Play>().SetState(false);
+            RoundStart();
         }
         if (EnemyAlive())
         {
@@ -75,7 +73,15 @@ public class GameHandler : MonoBehaviour
         if (spawner_round > 10)
         {
             Debug.Log("Hardcore mode");
-            
+            uiNotify = "Hardcore mode!!!";
         }
+    }
+
+    void RoundStart()
+    {
+        uiNotify = "";
+        Debug.Log("Game Started!!");
+        spawnVehicle.GetComponent<Spawn_Vehicle>().Move(true);
+        playButton.GetComponent<Play>().SetState(false);
     }
 }
