@@ -26,7 +26,6 @@ public class Play : MonoBehaviour
 
     public void SetState(bool state)
     {
-        Debug.Log("start");
         start = state;
         playAnim = true;
     }
