@@ -3,40 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Info : MonoBehaviour
 {
     //Towers
-    GameObject tower01;
+    public GameObject tower01;
+    public GameObject tower02;
+    public GameObject tower03;
+    public GameObject tower04;
+    
 
-    public GameObject txt_name;
-    public GameObject txt_text;
+    public GameObject text;
 
     void Start()
     {
-        tower01 = GameObject.FindGameObjectWithTag("Tower01");
     }
     void Update()
     {
-        //OnMouseOver();
+       // OnMouseOver();  
     }
 
     private void OnMouseOver()
     {
-        txt_text.GetComponent<Text>().text = GetTower().ToString();
-        txt_name.GetComponent<Text>().text = this.name;
+        text.GetComponent<Text>().text = GetTower();
     }
 
     string GetTower()
     {
         string ret = null;
-
         try
         {
             switch (this.name)
             {
                 case "UI_Tower01": //Tower01
-                    ret = $"Range: \nDamage: ";
+                    ret = $"Range: {tower01.GetComponent<Tower>().range}\nDamage: {tower01.GetComponent<Tower>().projectile.GetComponent<Projectile>().damage}";
                     break;
+
                 case "UI_Tower02": //Tower02, not existing yet
                     ret = null;
                     break;

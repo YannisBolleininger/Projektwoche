@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-         vehicle.GetComponent<Spawn_Vehicle>().Move(true);
+        // vehicle.GetComponent<Spawn_Vehicle>().Move(true);
     }
 
     public void VehicleOnPos()
