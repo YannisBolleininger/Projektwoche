@@ -6,7 +6,6 @@ public class Base : MonoBehaviour
 {
 
     public double health;
-
     
     void Start()
     {

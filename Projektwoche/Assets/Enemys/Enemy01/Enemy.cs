@@ -63,7 +63,6 @@ public class Enemy : MonoBehaviour
             projectile.GetComponent<Projectile_Enemy>().targetPos = aimPoint.transform.position;
             projectile.GetComponent<Projectile_Enemy>().spawnPos = this.transform.position;
             GameObject shot = Instantiate(projectile) as GameObject;
-            Debug.Log("shot");
         }
     }
 
