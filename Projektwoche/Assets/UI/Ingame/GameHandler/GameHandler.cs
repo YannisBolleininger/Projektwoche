@@ -25,7 +25,7 @@ public class GameHandler : MonoBehaviour
 
 
     bool fadeStart = false;
-
+    bool postRound = false;
     public bool enemysSpawned = false;
 
 
@@ -52,7 +52,8 @@ public class GameHandler : MonoBehaviour
         }
         if (enemysSpawned)
         {
-            if (!EnemyAlive())
+            Debug.Log("Enemys spawned");
+            if (!EnemyAlive() && !postRound)
             {
                 PostRound();
             }
@@ -71,17 +72,18 @@ public class GameHandler : MonoBehaviour
         GameObject enemys = GameObject.FindGameObjectWithTag("Enemy");
         if(enemys == null)
         {
-            Debug.Log("alive");
+            Debug.Log("notalive");
             return false;
         }
         else {
-            Debug.Log("notalive");
+            Debug.Log("alive");
             return true;
         }
     }
 
     void PostRound()
     {
+        postRound = true;
         spawner_round++;
         uiNotify = $"Wave {round} survived";
 
