@@ -53,16 +53,17 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Enemys\Enemy01\Healthbar.cs" />
+    <Compile Include="Assets\Enemys\Healthbar.cs" />
     <Compile Include="Assets\UI\Ingame\GameHandler\GameHandler.cs" />
-    <Compile Include="Assets\Enemys\Enemy01\Enemy.cs" />
+    <Compile Include="Assets\Enemys\Enemy.cs" />
+    <Compile Include="Assets\Levels\LVL1\Assets\MouseOverPath.cs" />
     <Compile Include="Assets\UI\Towers\Info\Info.cs" />
     <Compile Include="Assets\UI\Ingame\Play\Play.cs" />
-    <Compile Include="Assets\Enemys\Enemy01\Projectile\Projectile_Enemy.cs" />
+    <Compile Include="Assets\Enemys\Projectile\Projectile_Enemy.cs" />
     <Compile Include="Assets\Defense\RangeIndex.cs" />
     <Compile Include="Assets\Levels\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Levels\SceneHandler.cs" />
-    <Compile Include="Assets\Enemys\Enemy01\Move.cs" />
+    <Compile Include="Assets\Enemys\Move.cs" />
     <Compile Include="Assets\Defense\Base\Base.cs" />
     <Compile Include="Assets\Levels\Spawn\Spawn_Vehicle.cs" />
     <Compile Include="Assets\Levels\Spawn\Spawner.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="Assets\UI\Towers\DragDrop.cs" />
     <Compile Include="Assets\UI\Camera\Cam_FX.cs" />
     <Compile Include="Assets\Defense\Tower.cs" />
-    <Compile Include="Assets\Levels\LVL1\Assets\MouseOverPath.cs" />
+    <Compile Include="Assets\UI\Towers\Buy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

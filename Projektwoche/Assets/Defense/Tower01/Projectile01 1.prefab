@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1460543323508756968}
   m_Layer: 0
   m_Name: Projectile01 1
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: -0.46728206, y: 1.29, z: -11.63}
-  towerPos: {x: 39.12, y: 0.06, z: 2.7}
+  towerPos: {x: -22.428658, y: 0.5, z: -42.261738}
   projectileSpeed: 100
   enemy: {fileID: 0}
   damage: 10

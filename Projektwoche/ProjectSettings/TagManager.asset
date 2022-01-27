@@ -9,6 +9,7 @@ TagManager:
   - Spawner
   - Base
   - Tower01
+  - Projectile
   layers:
   - Default
   - TransparentFX

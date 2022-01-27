@@ -17,27 +17,28 @@ public class DragDrop : MonoBehaviour
 
     GameObject clickedTower;
 
+    public GameObject gameHandler;
     bool followMouse = false;
 
     Vector3 mousePos3D;
     Vector3 originalPos;
+
+    GameObject buy;
 
     [SerializeField] Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        buy = GameObject.Find("Towers");
     }
 
     // Update is called once per frame
     void Update()
     {
         mousePos = Input.mousePosition;
-        if (Input.GetMouseButtonDown(0))
-        {
-        }
-        if (followMouse)
+        if (followMouse
+            )
         {
             Ray ray = cam.ScreenPointToRay(mousePos);
             if(Physics.Raycast(ray, out RaycastHit raycastHit))
@@ -60,9 +61,12 @@ public class DragDrop : MonoBehaviour
 
     public void OnClick(GameObject uitower)
     {
-        clickedTower = uitower;
-        originalPos = uitower.transform.position;
-        followMouse = true;
+        if (!gameHandler.GetComponent<GameHandler>().gameStarted && buy.GetComponent<Buy>().CanBuy(uitower))
+        {
+            clickedTower = uitower;
+            originalPos = uitower.transform.position;
+            followMouse = true;
+        }
     }
 
     GameObject GetTower(GameObject uitower)

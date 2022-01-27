@@ -2,45 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
     public GameObject spawnVehicle;
-
     public GameObject playButton;
-
     public GameObject spawner;
 
     public GameObject ui;
     string uiNotify;
     GameObject uiFadeToBlack;
     GameObject uiGameOver;
+    public GameObject buy;
+
+    public GameObject sceneHandler;
 
     int round;
 
     int spawener_diff;
     int spawner_round;
 
-    int a = 0;
-
-
-    bool fadeStart = false;
     bool postRound = false;
     public bool enemysSpawned = false;
-
+    public bool gameStarted = false;
+    bool roundStarted = false;
 
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("Spawner");
         spawener_diff = spawner.GetComponent<Spawner>().difficulty;
-        spawner_round = 0;
-
-        round = GameObject.Find("Spawner").GetComponent<Spawner>().round;
+        spawner.GetComponent<Spawner>().round = 0;
 
         //UI controls:
         uiNotify = GameObject.Find("Notification").GetComponent<Text>().text;
         uiFadeToBlack = GameObject.Find("GameOverBackdrop");
         uiGameOver = GameObject.Find("GameOver");
+
+        buy.GetComponent<Buy>().wealth = 50;
+
     }
 
     // Update is called once per frame
@@ -48,18 +48,21 @@ public class GameHandler : MonoBehaviour
     {
         if (playButton.GetComponent<Play>().GetState())
         {
-            RoundStart();
+            if (!roundStarted)
+            {
+                roundStarted = true;
+                RoundStart();
+            }
         }
         if (enemysSpawned)
         {
-            Debug.Log("Enemys spawned");
             if (!EnemyAlive() && !postRound)
             {
                 PostRound();
             }
         }
 
-        if(this.GetComponent<Base>().health < 0)
+        if(this.GetComponent<Base>().health <= 0)
         {
             GameOver();
         }
@@ -67,26 +70,35 @@ public class GameHandler : MonoBehaviour
 
     }
 
-    bool EnemyAlive()
+    public bool EnemyAlive()
     {
-        GameObject enemys = GameObject.FindGameObjectWithTag("Enemy");
-        if(enemys == null)
+        if(GameObject.FindGameObjectWithTag("Enemy") != null)
         {
-            Debug.Log("notalive");
-            return false;
+            postRound = false;   
+            return true;
         }
         else {
-            Debug.Log("alive");
-            return true;
+            return false;
         }
     }
 
     void PostRound()
     {
+        Debug.Log("postround");
         postRound = true;
-        spawner_round++;
+        gameStarted = false;
+        spawner.GetComponent<Spawner>().round +=1;
         uiNotify = $"Wave {round} survived";
+        buy.GetComponent<Buy>().wealth += 100;
 
+        GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        for (int i = 0; i < projectiles.Length; i++)
+        {
+            projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+            Destroy(projectiles[i]);
+        }
+
+        playButton.GetComponent<Play>().SetState(false);
         PreRound();
     }
 
@@ -102,7 +114,6 @@ public class GameHandler : MonoBehaviour
             Debug.Log("Hardcore mode");
             uiNotify = "Hardcore mode!!!";
         }
-        a = 0;
     }
 
     void RoundStart()
@@ -110,29 +121,20 @@ public class GameHandler : MonoBehaviour
         uiNotify = "";
         Debug.Log("Game Started!!");
         spawnVehicle.GetComponent<Spawn_Vehicle>().Move(true);
-        playButton.GetComponent<Play>().SetState(false);
+        gameStarted = true;
+        enemysSpawned = false;
+        if (spawner.GetComponent<Spawner>().round != 0)
+        {
+            spawner.GetComponent<Spawner>().VehicleOnPos();
+        }
     }
 
     void GameOver()
     {
         uiGameOver.GetComponent<Text>().enabled = true;
         uiFadeToBlack.GetComponent<Image>().enabled = true;
-
-        if (!fadeStart)
-        {
-            StartCoroutine(FadeToBlack(1));
-        }
-        //scene handler -> main menu
+        uiFadeToBlack.GetComponent<Image>().color = new Color(0, 0, 0, 50);
+        sceneHandler.GetComponent<SceneHandler>().SwitchScene(0,5);
     }
 
-    IEnumerator FadeToBlack(float duration)
-    {
-        fadeStart = true;
-        while (uiFadeToBlack.GetComponent<Image>().color != new Color(0, 0, 0, 255))
-        {
-            a++;
-            yield return new WaitForSeconds(duration / 255);
-            uiFadeToBlack.GetComponent<Image>().color = new Color(0, 0, 0, a +1);
-        }
-    }
 }

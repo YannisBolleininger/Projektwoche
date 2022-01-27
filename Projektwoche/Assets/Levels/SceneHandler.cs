@@ -5,25 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    public void SwitchScene(int index, float after)
+    {
+        StartCoroutine(SwitchSceneIE(index, after));
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator SwitchSceneIE(int index, float duration)
     {
-
-    }
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
-    }
-
-    public void MainMenu()
-    {
-        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        yield return new WaitForSeconds(duration);
+        SceneManager.LoadSceneAsync(index, LoadSceneMode.Single);
     }
 }

@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour
 
     public void uiPlay()
     {
-        sceneHandler.GetComponent<SceneHandler>().StartGame();
+        sceneHandler.GetComponent<SceneHandler>().SwitchScene(1, 0);
     }
 
     public void uiInfo()

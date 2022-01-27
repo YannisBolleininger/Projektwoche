@@ -8,26 +8,36 @@ public class Play : MonoBehaviour
     bool start = false;
     bool playAnim = false;
     public GameObject lights;
-    public Color activate;
-    public Color activated;
+    public Color notPlaying;
+    public Color playing;
+
+    public GameObject spawner;
 
     void Start()
     {
-       lights.GetComponent<Light>().color = activate;
+       lights.GetComponent<Light>().color = notPlaying;
     }
 
     void Update()
     {
-        if (playAnim) 
+        if (GetState()) 
         {
-            lights.GetComponent <Light>().color = activated;
+            lights.GetComponent <Light>().color = playing;
+        }
+        if (!GetState())
+        {
+            lights.GetComponent<Light>().color = notPlaying;
         }
     }
 
     public void SetState(bool state)
     {
         start = state;
-        playAnim = true;
+        playAnim = state;
+        if (start && GameObject.Find("Spawner").GetComponent<Spawner>().round > 0)
+        {
+            spawner.GetComponent<Spawner>().VehicleOnPos();
+        }
     }
     
 

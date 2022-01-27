@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour
     public Vector3 aimOffset;
 
     public GameObject projectile;
+    public GameObject gameHandler;
 
 
     public int range;
@@ -19,6 +20,7 @@ public class Tower : MonoBehaviour
     void Start()
     {
         shooting = false;
+        gameHandler = GameObject.Find("Base");
     }
 
     void Update()
@@ -75,7 +77,7 @@ public class Tower : MonoBehaviour
         float health = enemy.GetComponent<Enemy>().Health;
         shooting = true;
 
-        while(health > 0) {
+        while(gameHandler.GetComponent<GameHandler>().EnemyAlive()) {
             yield return new WaitForSeconds(cooldown);
             health = health-1;
             projectile.GetComponent<Projectile>().enemy = enemy;

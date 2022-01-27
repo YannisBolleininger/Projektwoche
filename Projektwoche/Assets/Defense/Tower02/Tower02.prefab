@@ -56,8 +56,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279567895307238741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.88394, y: -0.14136028, z: -35.98693}
-  m_LocalScale: {x: 2.1716, y: 2.1716, z: 2.1716}
+  m_LocalPosition: {x: -0.14729, y: -2.7176, z: 0.016589}
+  m_LocalScale: {x: 3.7558663, y: 3.7558663, z: 3.7558663}
   m_Children:
   - {fileID: 7366470374589183857}
   - {fileID: 6120967472648056777}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bone: {fileID: 4815824088723803553}
   aimOffset: {x: 0, y: 0, z: 0}
-  projectile: {fileID: 8184122213754590318, guid: c5dab3495ad25fb4e8a47db3dc98fe23, type: 3}
+  projectile: {fileID: 8867057831332353094, guid: 15f0f9f4013dfe5409e7b5c63e9ca0bd, type: 3}
   range: 50
   cooldown: 0.2
 --- !u!1 &3356255890655239301

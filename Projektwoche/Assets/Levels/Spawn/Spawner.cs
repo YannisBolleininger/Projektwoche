@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public Transform start;
 
     public int difficulty;
-    public int round;
+    public int round = 1;
     public int hpMultiply;
     public int amout;
 
@@ -30,86 +30,88 @@ public class Spawner : MonoBehaviour
         vehicle.GetComponent<Spawn_Vehicle>().Move(false);
         StartCoroutine(Spawn());
     }
-
     IEnumerator Spawn()
     {
         DiffHandler();
-        GameObject l_enemy;
+        for(int i = 0; i < 1; i++)
+        {
+            yield return new WaitForSeconds(waitingTime);
+            Instantiate(allEnemys[i]);
+        }
 
-            int lengt = amout;
-            if (amout < allEnemys.Length)
-            {
-                lengt = allEnemys.Length;
-            }
-            if (round < lengt ^ round < 5)
-            {
-                int i = 0;
-                for (i = 0; i < amout / lengt; i++)
-                {
-                    enemy = allEnemys[0];
-                    l_enemy = Instantiate(enemy);
-                    l_enemy.transform.position = this.transform.position;
-                    l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
-                    GameObject.Find("Base").GetComponent<GameHandler>().enemysSpawned = true;
-                    Debug.Log("Enemy1");
-                    yield return new WaitForSeconds(waitingTime);
-            }
-                for (i = amout / lengt; i < amout / (lengt / 2); i++)
-                {
-                    enemy = allEnemys[1];
-                    l_enemy = Instantiate(enemy);
-                    l_enemy.transform.position = this.transform.position;
-                    l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
-                    Debug.Log("Enemy2");
-                    yield return new WaitForSeconds(waitingTime);
-                }
-            }
-            else
-            {
-                int i = 0;
-                for (i = 0; i < amout / lengt; i++)
-                {
-                    enemy = allEnemys[0];
-                    l_enemy = Instantiate(enemy);
-                    l_enemy.transform.position = this.transform.position;
-                    l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
-                    GameObject.Find("Base").GetComponent<GameHandler>().enemysSpawned = true;
-                    Debug.Log("Enemy1");
-                    yield return new WaitForSeconds(waitingTime);
-                }
+            //if (amout < allEnemys.Length)
+            //{
+            //    lengt = allEnemys.Length;
+            //}
+            //if (round < lengt ^ round < 5)
+            //{
+            //    int i = 0;
+            //    for (i = 0; i < amout / lengt; i++)
+            //    {
+            //        enemy = allEnemys[0];
+            //        l_enemy = Instantiate(enemy);
+            //        l_enemy.transform.position = this.transform.position;
+            //        l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
+            //        GameObject.Find("Base").GetComponent<GameHandler>().enemysSpawned = true;
+            //        Debug.Log("Enemy1");
+            //        yield return new WaitForSeconds(waitingTime);
+            //}
+            //    for (i = amout / lengt; i < amout / (lengt / 2); i++)
+            //    {
+            //        enemy = allEnemys[1];
+            //        l_enemy = Instantiate(enemy);
+            //        l_enemy.transform.position = this.transform.position;
+            //        l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
+            //        Debug.Log("Enemy2");
+            //        yield return new WaitForSeconds(waitingTime);
+            //    }
+            //}
+            //else
+            //{
+            //    int i = 0;
+            //    for (i = 0; i < amout / lengt; i++)
+            //    {
+            //        enemy = allEnemys[0];
+            //        l_enemy = Instantiate(enemy);
+            //        l_enemy.transform.position = this.transform.position;
+            //        l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
+            //        GameObject.Find("Base").GetComponent<GameHandler>().enemysSpawned = true;
+            //        Debug.Log("Enemy1");
+            //        yield return new WaitForSeconds(waitingTime);
+            //    }
                 
-                for (i = amout / lengt; i < amout / (lengt / 2); i++)
-                {
-                    enemy = allEnemys[1];
-                    l_enemy = Instantiate(enemy);
-                    l_enemy.transform.position = this.transform.position;
-                    l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
-                    Debug.Log("Enemy2");
-                    yield return new WaitForSeconds(waitingTime);
-                }
+            //    for (i = amout / lengt; i < amout / (lengt / 2); i++)
+            //    {
+            //        enemy = allEnemys[1];
+            //        l_enemy = Instantiate(enemy);
+            //        l_enemy.transform.position = this.transform.position;
+            //        l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
+            //        Debug.Log("Enemy2");
+            //        yield return new WaitForSeconds(waitingTime);
+            //    }
                 
-                for (i = amout / (lengt / 2); i < (amout / lengt) + (amout / (lengt / 2)); i++)
-                {
-                    enemy = allEnemys[2];
-                    l_enemy = Instantiate(enemy);
-                    l_enemy.transform.position = this.transform.position;
-                    l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
-                    Debug.Log("Enemy3");
-                    yield return new WaitForSeconds(waitingTime);
-                }
+            //    for (i = amout / (lengt / 2); i < (amout / lengt) + (amout / (lengt / 2)); i++)
+            //    {
+            //        enemy = allEnemys[2];
+            //        l_enemy = Instantiate(enemy);
+            //        l_enemy.transform.position = this.transform.position;
+            //        l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
+            //        Debug.Log("Enemy3");
+            //        yield return new WaitForSeconds(waitingTime);
+            //    }
                 
-                for (i = (amout / lengt) + (amout / (lengt / 2)); i < amout; i++)
-                {
-                    enemy = allEnemys[3];
-                    l_enemy = Instantiate(enemy);
-                    l_enemy.transform.position = this.transform.position;
-                    l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
-                    Debug.Log("Enemy4");
-                    yield return new WaitForSeconds(waitingTime);
-                }
+            //    for (i = (amout / lengt) + (amout / (lengt / 2)); i < amout; i++)
+            //    {
+            //        enemy = allEnemys[3];
+            //        l_enemy = Instantiate(enemy);
+            //        l_enemy.transform.position = this.transform.position;
+            //        l_enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health * hpMultiply;
+            //        Debug.Log("Enemy4");
+            //        yield return new WaitForSeconds(waitingTime);
+            //    }
                 
 
-            }
+            //}
         gameHandler.GetComponent<GameHandler>().enemysSpawned = true;
 
     }
