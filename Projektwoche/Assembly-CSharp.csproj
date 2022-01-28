@@ -58,6 +58,7 @@
      <Compile Include="Assets\Levels\MainMenu\MainMenu.cs" />
      <Compile Include="Assets\Levels\SceneHandler.cs" />
      <Compile Include="Assets\Enemys\Move.cs" />
+     <Compile Include="Assets\Levels\MainMenu\HowToPlay.cs" />
      <Compile Include="Assets\Defense\Base\Base.cs" />
      <Compile Include="Assets\Levels\Spawn\Spawn_Vehicle.cs" />
      <Compile Include="Assets\Levels\Spawn\Spawner.cs" />
