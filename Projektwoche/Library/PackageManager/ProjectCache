@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637789583784887445
-    m_Hash: 1420430024
+      ticks: 637789612015075687
+    m_Hash: 1413734742
   m_LockFileStatus:
     m_FilePath: C:/Users/User/Documents/GitHub/Projektwoche/Projektwoche/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637789584108046664
-    m_Hash: 3808696902
+      ticks: 637789612015075687
+    m_Hash: 116726733
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

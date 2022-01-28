@@ -23,6 +23,9 @@ public class Base : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthbar.value = health / maxHealth;
+        Debug.Log(health);
+        Debug.Log(health / maxHealth);
     }
 
     public void Hit(float damage)
@@ -30,8 +33,7 @@ public class Base : MonoBehaviour
         if(health > 0)
         {
             
-            health -= damage;
-            healthbar.value = Mathf.Clamp(health/maxHealth, 0, 1);
+            health = health - damage;
             double healthPercent = (health / maxHealth) * 100;
             if (healthPercent < 66.6)
             {
@@ -47,6 +49,7 @@ public class Base : MonoBehaviour
             }
         }
         Debug.Log("HP: " + health);
+        Debug.Log("HP normalized: " + Mathf.InverseLerp(0, 1, health));
 
 
     }

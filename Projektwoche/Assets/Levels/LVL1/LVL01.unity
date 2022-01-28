@@ -2575,13 +2575,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8b25e34ea494e44aa530643a37600a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 2000
+  health: 0
+  maxHealth: 5000
   healthIndex: {fileID: 1597239556}
   healthbar: {fileID: 1689827774}
-  high: {r: 0, g: 0.8301887, b: 0.038346633, a: 0}
-  mid: {r: 0.9716981, g: 0.8638238, b: 0, a: 0}
-  low: {r: 1, g: 0.00000022649765, b: 0, a: 0}
+  high: {r: 0, g: 0.8301887, b: 0.038346633, a: 0.78431374}
+  mid: {r: 0.9716981, g: 0.8638238, b: 0, a: 0.78431374}
+  low: {r: 1, g: 0.00000022649765, b: 0, a: 0.5882353}
 --- !u!4 &761963852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d07e6d888e51023458834150a67e7fa2, type: 3}
@@ -5591,7 +5591,7 @@ GameObject:
   - component: {fileID: 1689827773}
   - component: {fileID: 1689827774}
   m_Layer: 5
-  m_Name: Healthbar
+  m_Name: Healthbar base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
