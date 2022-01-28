@@ -2,11 +2,13 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Base
+    - Buy
+    - DragDrop
     - Enemy
     - GameHandler
     - Healthbar
-    - Info
     - MainMenu
+    - MouseOverPath
     - Move
     - Play
     - Projectile
@@ -58,52 +60,60 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1474}
+      Script: {instanceID: 1450}
     - Class: 114
-      Script: {instanceID: 1480}
+      Script: {instanceID: 1690}
     - Class: 114
-      Script: {instanceID: 1492}
+      Script: {instanceID: 1696}
     - Class: 114
-      Script: {instanceID: 1506}
+      Script: {instanceID: 1708}
     - Class: 114
-      Script: {instanceID: 1668}
+      Script: {instanceID: 1818}
     - Class: 114
-      Script: {instanceID: 1694}
+      Script: {instanceID: 1888}
     - Class: 114
-      Script: {instanceID: 1916}
+      Script: {instanceID: 1914}
     - Class: 114
-      Script: {instanceID: 1938}
+      Script: {instanceID: 2136}
     - Class: 114
-      Script: {instanceID: 2140}
+      Script: {instanceID: 2158}
     - Class: 114
-      Script: {instanceID: 2500}
+      Script: {instanceID: 2360}
     - Class: 114
-      Script: {instanceID: 2642}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 2842}
+      Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 3022}
+      Script: {instanceID: 3066}
     - Class: 114
-      Script: {instanceID: 3072}
+      Script: {instanceID: 3158}
     - Class: 114
-      Script: {instanceID: 3192}
+      Script: {instanceID: 3248}
     - Class: 114
-      Script: {instanceID: 3404}
+      Script: {instanceID: 3298}
     - Class: 114
-      Script: {instanceID: 3666}
+      Script: {instanceID: 3418}
     - Class: 114
-      Script: {instanceID: 3826}
+      Script: {instanceID: 3630}
     - Class: 114
-      Script: {instanceID: 4036}
+      Script: {instanceID: 3890}
     - Class: 114
-      Script: {instanceID: 4662}
+      Script: {instanceID: 4050}
     - Class: 114
-      Script: {instanceID: 28782}
+      Script: {instanceID: 4262}
+    - Class: 114
+      Script: {instanceID: 4408}
+    - Class: 114
+      Script: {instanceID: 4840}
+    - Class: 114
+      Script: {instanceID: 4892}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -145,34 +155,32 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1474}
+      Script: {instanceID: 1450}
     - Class: 114
-      Script: {instanceID: 1506}
+      Script: {instanceID: 1690}
     - Class: 114
-      Script: {instanceID: 1694}
+      Script: {instanceID: 1914}
     - Class: 114
-      Script: {instanceID: 2140}
+      Script: {instanceID: 2360}
     - Class: 114
-      Script: {instanceID: 2500}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 2642}
+      Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 2842}
+      Script: {instanceID: 3036}
     - Class: 114
-      Script: {instanceID: 3072}
+      Script: {instanceID: 3066}
     - Class: 114
-      Script: {instanceID: 3192}
+      Script: {instanceID: 3158}
     - Class: 114
-      Script: {instanceID: 28782}
+      Script: {instanceID: 3298}
     - Class: 114
-      Script: {instanceID: 28914}
+      Script: {instanceID: 3418}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -194,13 +202,19 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Healthbar
   - hash:
       serializedVersion: 2
-      Hash: 24dd59b1ca4fe476e18f01b0cbea0ca0
+      Hash: 19fe9a04afdede738d6e24deb79762aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameHandler
@@ -216,12 +230,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
@@ -240,6 +248,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Animation.Rigging.dll
     namespaceName: UnityEngine.Animations.Rigging
     className: TwistChainConstraint
+  - hash:
+      serializedVersion: 2
+      Hash: 249d38b9cf03cd38a6efb5befcab15aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MouseOverPath
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -266,12 +280,6 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 9417c52c47a60e6800640ca3c92efcee
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Info
-  - hash:
-      serializedVersion: 2
       Hash: 21a9c6dbf300fc1f6dc15ca7e2c39a37
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -296,7 +304,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 46135b8cee950df0e9a849ccff71c194
+      Hash: 36ac629c1ddd9adc5be219204dfb7967
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Play
@@ -416,6 +424,12 @@ ScriptsOnlyBuild:
     className: DampedTransform
   - hash:
       serializedVersion: 2
+      Hash: a1d622f30d1da5d213f763eda7068c16
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
@@ -444,6 +458,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneHandler
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -524,7 +544,7 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: ebd6bd047c763f0b52efed3c0b1a724c
+      Hash: 0585d8e0b4eb20939cce1ccb13d6ba7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Base
@@ -620,7 +640,7 @@ ScriptsOnlyBuild:
     className: MultiPositionConstraint
   - hash:
       serializedVersion: 2
-      Hash: 6a4591b0bf5969b0dfe1f8d63b8608d2
+      Hash: d25fea762508ce9a8a7266a61eca310f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawner
@@ -672,6 +692,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 2b61e6873e2c7a3a88a2e3d35163ddfe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DragDrop
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -734,7 +760,13 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 655256ef0ab5cde94f85cdd6d9648ba1
+      Hash: fa5f368e95854395c89893be5bee3bf6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Buy
+  - hash:
+      serializedVersion: 2
+      Hash: 6e4359c4ab9a559978aa7521a111f662
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tower
@@ -797,15 +829,9 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: SceneHandler
-  - hash:
-      serializedVersion: 2
-      Hash: a1d622f30d1da5d213f763eda7068c16
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainMenu
+    className: HowToPlay
   platform: 19
   scenePathNames:
   - Assets/Levels/MainMenu/MainMenu.unity
   - Assets/Levels/LVL1/LVL01.unity
-  playerPath: F:/Work/Schule/Projektwoche/Builds/TestBuilds/Projektwoche.exe
+  playerPath: C:/Users/User/Documents/GitHub/Projektwoche/Builds/Projektwoche.exe

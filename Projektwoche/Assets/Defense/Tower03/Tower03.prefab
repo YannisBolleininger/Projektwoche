@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bone: {fileID: 6590887811371096220}
-  aimOffset: {x: 0, y: 0, z: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 8867057831332353094, guid: 6994568857e0c3c4daec26496025efeb, type: 3}
+  gameHandler: {fileID: 0}
   range: 70
   cooldown: 5
 --- !u!1 &1093897041883965277

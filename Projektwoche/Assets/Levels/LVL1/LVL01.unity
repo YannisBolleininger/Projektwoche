@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44764566, g: 0.49322605, b: 0.55179864, a: 1}
+  m_IndirectSpecularColor: {r: 0.44764733, g: 0.49322915, b: 0.5518055, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5662,9 +5662,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2000
-  m_WholeNumbers: 1
-  m_Value: 2000
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6370,11 +6370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe08e0a0adc1aeb4cb49eee0e5963b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower01: {fileID: 8241023635732366481, guid: 85ced4855ece37e40bf691dc990b1145, type: 3}
-  tower02: {fileID: 0}
-  tower03: {fileID: 0}
-  tower04: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &1947509753
 GameObject:
   m_ObjectHideFlags: 0

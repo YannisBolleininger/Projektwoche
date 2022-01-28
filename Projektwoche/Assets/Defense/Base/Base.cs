@@ -29,8 +29,9 @@ public class Base : MonoBehaviour
     {
         if(health > 0)
         {
+            
             health -= damage;
-            healthbar.value = health / maxHealth;
+            healthbar.value = Mathf.Clamp(health/maxHealth, 0, 1);
             double healthPercent = (health / maxHealth) * 100;
             if (healthPercent < 66.6)
             {

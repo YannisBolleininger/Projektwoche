@@ -39,7 +39,7 @@ public class GameHandler : MonoBehaviour
         uiFadeToBlack = GameObject.Find("GameOverBackdrop");
         uiGameOver = GameObject.Find("GameOver");
 
-        buy.GetComponent<Buy>().wealth = 50;
+        buy.GetComponent<Buy>().wealth = 25;
 
     }
 
@@ -89,7 +89,7 @@ public class GameHandler : MonoBehaviour
         gameStarted = false;
         spawner.GetComponent<Spawner>().round +=1;
         uiNotify = $"Wave {round} survived";
-        buy.GetComponent<Buy>().wealth += 100;
+        buy.GetComponent<Buy>().wealth += 35;
 
         GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Projectile");
         for (int i = 0; i < projectiles.Length; i++)

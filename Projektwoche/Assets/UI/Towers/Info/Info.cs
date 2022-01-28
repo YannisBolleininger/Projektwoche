@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Info : MonoBehaviour
+public class MainMenu_Info : MonoBehaviour
 {
     //Towers
     public GameObject tower01;
