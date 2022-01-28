@@ -220,9 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65cb832bdbacef449b6978ae179adcf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bone: {fileID: 0}
+  bone: {fileID: 1843622086741942534}
   aimOffset: {x: 0, y: 0, z: 0}
   projectile: {fileID: 8867057831332353094, guid: cb1bcd1a86d845f44b2c54507f9de557, type: 3}
+  gameHandler: {fileID: 0}
   range: 50
   cooldown: 0.3
 --- !u!1 &6816331911418197241

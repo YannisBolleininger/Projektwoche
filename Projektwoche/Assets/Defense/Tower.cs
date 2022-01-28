@@ -6,7 +6,6 @@ public class Tower : MonoBehaviour
 {
     GameObject enemy;
     public GameObject bone;
-    public Vector3 aimOffset;
 
     public GameObject projectile;
     public GameObject gameHandler;
@@ -68,7 +67,7 @@ public class Tower : MonoBehaviour
 
     void PlaceTarget() //places target to enemy position
     {
-        Quaternion rotate = Quaternion.LookRotation(enemy.transform.position - (bone.transform.position - aimOffset));
+        Quaternion rotate = Quaternion.LookRotation(enemy.transform.position - bone.transform.position);
         bone.transform.rotation = Quaternion.RotateTowards(bone.transform.rotation, rotate, 1);
     }
 

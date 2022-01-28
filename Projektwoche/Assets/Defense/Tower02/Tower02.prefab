@@ -80,6 +80,7 @@ MonoBehaviour:
   bone: {fileID: 4815824088723803553}
   aimOffset: {x: 0, y: 0, z: 0}
   projectile: {fileID: 8867057831332353094, guid: 15f0f9f4013dfe5409e7b5c63e9ca0bd, type: 3}
+  gameHandler: {fileID: 0}
   range: 50
   cooldown: 0.2
 --- !u!1 &3356255890655239301
@@ -222,14 +223,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4815824088723803553}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.39071345, y: -0.5893583, z: -0.5893579, w: 0.39071357}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000000012462591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4223790849591851158}
   m_Father: {fileID: 7366470374589183857}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 202.91501, y: 90, z: 90}
 --- !u!1 &5130254839506622775
 GameObject:
   m_ObjectHideFlags: 0
